@@ -1,6 +1,7 @@
 import React from "react";
 //import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
+import block from "./Assets/Block.png";
 
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
@@ -22,10 +23,11 @@ function App(): JSX.Element {
     return (
         <div className="App">
             <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript Kayla Roth Hello
-                World!!
+                Jenga
+                Jessica, Kayla, Emilie
             </header>
-            <hr></hr>
+            <img src={block} alt="Block"></img>
+            <hr></hr>3
             <CheckAnswer expectedAnswer="42"></CheckAnswer>
             <hr></hr>
             <GiveAttempts></GiveAttempts>
