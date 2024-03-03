@@ -30,15 +30,6 @@
     color: rgb(112, 72, 72);
 }
 
-.App-link {
-    color: #4498af;
-}
-
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.App-body{
+    background-color: #AFC5A1;
 }
