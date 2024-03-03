@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import "./App.css";
+
 import Horizontal from "./Assets/Horizontal.png";
 import Vertical from "./Assets/Vertical.png";
-
-//import { Button, Col, Container, Row } from "react-bootstrap";
 
 
 function App(): JSX.Element {
@@ -11,8 +10,8 @@ function App(): JSX.Element {
         <div className="App">
             <header className="App-header">
                 Jenga
-                Jessica, Kayla, Emilie
             </header>
+        </div>
             <body>
             <img src={Horizontal} style={{ position: 'absolute', top: '25px', left: '60px' }}alt="Horizontal" className="img" ></img>
             <img src={Horizontal} style={{ position: 'absolute', top: '35px', left: '80px' }}alt="Horizontal" className="img"></img>
@@ -27,8 +26,6 @@ function App(): JSX.Element {
             <img src={Horizontal} style={{ position: 'absolute', top: '-5px', left: '100px' }}alt="Horizontal" className="images"></img>
             </body>
        </div>
-       
-
     );
 }
 
