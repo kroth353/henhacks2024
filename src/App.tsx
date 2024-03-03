@@ -1,22 +1,9 @@
-import React from "react";
-//import { Button, Col, Container, Row } from "react-bootstrap";
+import React, { useState } from 'react';
 import "./App.css";
 
-import { ChangeType } from "./components/ChangeType";
-import { RevealAnswer } from "./components/RevealAnswer";
-import { StartAttempt } from "./components/StartAttempt";
-import { TwoDice } from "./components/TwoDice";
-import { CycleHoliday } from "./components/CycleHoliday";
-import { Counter } from "./components/Counter";
-import { DoubleHalf } from "./bad-components/DoubleHalf";
-import { ColoredBox } from "./bad-components/ColoredBox";
-import { ShoveBox } from "./bad-components/ShoveBox";
-import { ChooseTeam } from "./bad-components/ChooseTeam";
-import { EquationGenerator } from "./form-components/EquationGenerator";
-import { GiveAttempts } from "./form-components/GiveAttempts";
-import { EditMode } from "./form-components/EditMode";
-import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
-import { ChangeColor } from "./form-components/ChangeColor";
+import Horizontal from "./Assets/Horizontal.png";
+import Vertical from "./Assets/Vertical.png";
+
 
 function App(): JSX.Element {
     return (
@@ -24,40 +11,21 @@ function App(): JSX.Element {
             <header className="App-header">
                 Jenga
             </header>
-            <hr></hr>3
-            <EquationGenerator></EquationGenerator>
-            <hr></hr>
-            <GiveAttempts></GiveAttempts>
-            <hr></hr>
-            <EditMode></EditMode>
-            <hr></hr>
-            <ChangeColor></ChangeColor>
-            <hr></hr>
-            <MultipleChoiceQuestion
-                options={["a", "b", "c"]}
-                expectedAnswer="b"
-            ></MultipleChoiceQuestion>
-            <hr></hr>
-            {<DoubleHalf></DoubleHalf>}
-            <hr></hr>
-            <ChooseTeam></ChooseTeam>
-            <hr></hr>
-            <ColoredBox></ColoredBox>
-            <hr></hr>
-            <ShoveBox></ShoveBox>
-            <hr></hr>
-            <Counter></Counter>
-            <hr />
-            <RevealAnswer></RevealAnswer>
-            <hr />
-            <StartAttempt></StartAttempt>
-            <hr />
-            <TwoDice></TwoDice>
-            <hr />
-            <ChangeType></ChangeType>
-            <hr />
-            <CycleHoliday></CycleHoliday>
         </div>
+            <body>
+            <img src={Horizontal} style={{ position: 'absolute', top: '25px', left: '60px' }}alt="Horizontal" className="img" ></img>
+            <img src={Horizontal} style={{ position: 'absolute', top: '35px', left: '80px' }}alt="Horizontal" className="img"></img>
+            <img src={Horizontal} style={{ position: 'absolute', top: '45px', left: '100px' }}alt="Horizontal" className="img"></img>
+            
+            <img src={Vertical} style={{ position: 'absolute', top: '0px', left: '80px' }}alt="Horizontal" className="images"></img>
+            <img src={Vertical} style={{ position: 'absolute', top: '10px', left: '60px' }}alt="Horizontal" className="images"></img>
+            <img src={Vertical} style={{ position: 'absolute', top: '20px', left: '40px' }}alt="Horizontal" className="images"></img>
+       
+            <img src={Horizontal} style={{ position: 'absolute', top: '-25px', left: '60px' }}alt="Horizontal" className="images"></img>
+            <img src={Horizontal} style={{ position: 'absolute', top: '-15px', left: '80px' }}alt="Horizontal" className="images"></img>
+            <img src={Horizontal} style={{ position: 'absolute', top: '-5px', left: '100px' }}alt="Horizontal" className="images"></img>
+            </body>
+       </div>
     );
 }
 

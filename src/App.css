@@ -7,6 +7,18 @@
     pointer-events: none;
 }
 
+.App-img:onclick{
+    display: none;
+}
+
+.visible {
+    display: block;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
 @media (prefers-reduced-motion: no-preference) {
     .App-logo {
         animation: App-logo-spin infinite 20s linear;
