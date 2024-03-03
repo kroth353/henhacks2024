@@ -65,19 +65,24 @@ function App(): JSX.Element {
     };
     return (
         <div className="App">
-            <header className="App-header">
-                Jenga
+            <header className="App-header" style={{color:'#AD883A', fontSize:'50px'}}>
+                MATH JENGA
             </header>
-        <body>
+        <body style={{height:'450px'}}>
+            <div>
+                {generateImages('horizontal', 500, 840, 3, 20, 40, 0)}
+                {generateImages('vertical', 450, 920, 3, 20, -40, 3)}
+                {generateImages('horizontal', 400, 840, 3, 20, 40, 6)}
+                {generateImages('vertical', 350, 920, 3, 20, -40, 9)}
+                {generateImages('horizontal', 300, 840, 3, 20, 40, 12)}
+                {generateImages('vertical', 250, 920, 3, 20, -40, 15)}
+            </div>
 
-        {generateImages('horizontal', 300, 80, 3, 20, 40, 0)}
-        {generateImages('vertical', 250, 120, 3, 20, -40, 3)}
-        {generateImages('horizontal', 200, 80, 3, 20, 40, 6)}
-        {generateImages('vertical', 150, 120, 3, 20, -40, 9)}
-        {generateImages('horizontal', 100, 80, 3, 20, 40, 12)}
-        {generateImages('vertical', 50, 120, 3, 20, -40, 15)}
-            <EquationGenerator></EquationGenerator>
-            </body>
+            <br></br>
+            <div>
+                <EquationGenerator></EquationGenerator>
+            </div>
+        </body>
             <hr></hr>
        </div>
     );

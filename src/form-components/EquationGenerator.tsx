@@ -60,21 +60,21 @@ export function EquationGenerator(): JSX.Element {
     }
 
     return (
-        <div>
-            <h3>Check Answer</h3>
+        <div style={{fontSize:'20px', width:'800px', position:'absolute'}}>
+            <h3 style={{color:'#AD883A', alignContent:'center'}}>Solve the equation!</h3>
             <div>{randNum1 + " "}{randOp + " "}{randNum2}</div>
             <Form.Group controlId="checkAnswer">
-                <Form.Control ref={answerInputRef} onChange={updateAnswer} />
+                <Form.Control ref={answerInputRef} onChange={updateAnswer} style={{ width: '200px', margin: '0 auto' }}/>
             </Form.Group>
-            
-            <Button onClick={checkAnswer} disabled={correctAnswerSubmittted}>Check Answer</Button>
+            <br></br>
+            <Button onClick={checkAnswer} disabled={correctAnswerSubmittted} style={{backgroundColor: "#afc5a1", color:'#AD883A'}}>Check Answer</Button>
             <div>{displayText}</div>
             <div> {"Number of Tries for "} {currentPlayer + ":"} {numTries === 0 ? " " : numTries}</div>
             <div> <span style={currentPlayer === "Player 1" ? {
-                                    backgroundColor: "green"
+                                    backgroundColor: "#afc5a1"
                                 } :{}}>Player 1 Points:</span> {player1Points}</div>
             <div> <span style={currentPlayer === "Player 2" ? {
-                                    backgroundColor: "green"
+                                    backgroundColor: "#afc5a1"
                                 } :{}}>Player 2 Points:</span> {player2Points}</div>
         </div>
     );
