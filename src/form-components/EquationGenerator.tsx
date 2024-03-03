@@ -67,7 +67,7 @@ export function EquationGenerator(): JSX.Element {
                 <Form.Control ref={answerInputRef} onChange={updateAnswer} style={{ width: '200px', margin: '0 auto' }}/>
             </Form.Group>
             <br></br>
-            <Button onClick={checkAnswer} disabled={correctAnswerSubmittted} style={{backgroundColor: "#afc5a1", color:'#AD883A'}}>Check Answer</Button>
+            <Button onClick={checkAnswer} disabled={correctAnswerSubmittted} style={{backgroundColor: "#afc5a1", borderBlockColor:"#afc5a1", color:'black'}}>Click to Check Answer</Button>
             <div>{displayText}</div>
             <div> {"Number of Tries for "} {currentPlayer + ":"} {numTries === 0 ? " " : numTries}</div>
             <div> <span style={currentPlayer === "Player 1" ? {

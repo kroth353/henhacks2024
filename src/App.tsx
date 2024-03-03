@@ -67,6 +67,8 @@ function App(): JSX.Element {
         <div className="App">
             <header className="App-header" style={{color:'#AD883A', fontSize:'50px'}}>
                 MATH JENGA
+                <br></br>
+                <div style={{fontSize:'15px'}}>Kayla Roth, Jess Manchak, Emilie Barniak</div>
             </header>
         <body style={{height:'450px'}}>
             <div>
