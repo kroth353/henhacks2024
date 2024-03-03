@@ -1,7 +1,6 @@
 import React from "react";
 //import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
-import block from "./Assets/Block.png";
 
 import { ChangeType } from "./components/ChangeType";
 import { RevealAnswer } from "./components/RevealAnswer";
@@ -13,7 +12,7 @@ import { DoubleHalf } from "./bad-components/DoubleHalf";
 import { ColoredBox } from "./bad-components/ColoredBox";
 import { ShoveBox } from "./bad-components/ShoveBox";
 import { ChooseTeam } from "./bad-components/ChooseTeam";
-import { CheckAnswer } from "./form-components/CheckAnswer";
+import { EquationGenerator } from "./form-components/EquationGenerator";
 import { GiveAttempts } from "./form-components/GiveAttempts";
 import { EditMode } from "./form-components/EditMode";
 import { MultipleChoiceQuestion } from "./form-components/MultipleChoiceQuestion";
@@ -24,11 +23,9 @@ function App(): JSX.Element {
         <div className="App">
             <header className="App-header">
                 Jenga
-                Jessica, Kayla, Emilie
             </header>
-            <img src={block} alt="Block"></img>
             <hr></hr>3
-            <CheckAnswer expectedAnswer="42"></CheckAnswer>
+            <EquationGenerator></EquationGenerator>
             <hr></hr>
             <GiveAttempts></GiveAttempts>
             <hr></hr>
