@@ -4,6 +4,7 @@ import "./App.css";
 import Horizontal from "./Assets/Horizontal.png";
 import Vertical from "./Assets/Vertical.png";
 import { EquationGenerator } from "./form-components/EquationGenerator";
+import { GradeLevelSelection } from './form-components/GradeLevelSelection';
 
 interface ImageStyle {
     position: 'absolute';
@@ -68,8 +69,15 @@ function App(): JSX.Element {
             <header className="App-header" style={{color:'#AD883A', fontSize:'50px'}}>
                 MATH JENGA
                 <br></br>
+                
                 <div style={{fontSize:'15px'}}>Kayla Roth, Jess Manchak, Emilie Barniak</div>
+                <div style={{fontSize:'15px', color: '#222222', marginLeft: '900px'}}> 
+                <GradeLevelSelection
+                options={["Grade 1", "Grade 2", "Grade 3", "Grade 4", "Grade 5", "Grade 6", "Grade 7", "Grade 8"]}
+                ></GradeLevelSelection>
+                </div>
             </header>
+           
         <body style={{height:'450px'}}>
             <div>
                 {generateImages('horizontal', 500, 840, 3, 20, 40, 0)}
