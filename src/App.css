@@ -7,13 +7,6 @@
     pointer-events: none;
 }
 
-.App-img:onclick{
-    display: none;
-}
-
-.visible {
-    display: block;
-  }
   
   .hidden {
     display: none;
