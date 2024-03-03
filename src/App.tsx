@@ -12,19 +12,37 @@ interface ImageStyle {
     left: string;
 }
 function App(): JSX.Element {
-    const generateImages = (type: string, startTop: number, startLeft: number, numImages: number, topIncrement: number, leftIncrement: number, startId: number) => {
-        const images = [];
+    const generateImages = (type: string, startTop: number, startLeft: number, numImages: number, 
+        topIncrement: number, leftIncrement: number, startId: number): JSX.Element[] => {
+            const images: JSX.Element[] = [];
+    
         let idNum = startId;
+
+        function Hider({ children, id }: { children: React.ReactNode; id: number }): JSX.Element {
+            const [hidden, setHidden] = useState<boolean>(false);
+        
+            const handleClick = (): void => {
+                setHidden(!hidden);
+            };
+        
+            return (
+                <span onClick={handleClick}>
+                    {hidden ? null : children}
+                </span>
+            );
+        }
+
 
         for (let i = 0; i < numImages; i++) {
             const style: ImageStyle = {
                 position: 'absolute',
                 id: i,
                 top: `${startTop + (i * topIncrement)}px`,
-                left: `${startLeft + (i * leftIncrement)}px`
+                left: `${startLeft + (i * leftIncrement)}px`,
             };
 
             images.push(
+                <Hider key={`${type}-${i}`} id={idNum}>
                 <img
                     key={`${type}-${i}`}
                     id={''+idNum}
@@ -33,7 +51,9 @@ function App(): JSX.Element {
                     alt={`${type} ${i}`}
                     className={type === 'horizontal' ? 'img' : 'images'}
                 />
+                </Hider>
             );
+
 
             console.log(images[i]);
 
@@ -49,15 +69,16 @@ function App(): JSX.Element {
                 Jenga
             </header>
         <body>
+
         {generateImages('horizontal', 300, 80, 3, 20, 40, 0)}
         {generateImages('vertical', 250, 120, 3, 20, -40, 3)}
         {generateImages('horizontal', 200, 80, 3, 20, 40, 6)}
         {generateImages('vertical', 150, 120, 3, 20, -40, 9)}
         {generateImages('horizontal', 100, 80, 3, 20, 40, 12)}
         {generateImages('vertical', 50, 120, 3, 20, -40, 15)}
+            <EquationGenerator></EquationGenerator>
             </body>
             <hr></hr>
-            <EquationGenerator></EquationGenerator>
        </div>
     );
 }
