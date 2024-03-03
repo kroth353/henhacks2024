@@ -12,10 +12,9 @@ interface ImageStyle {
     left: string;
 }
 function App(): JSX.Element {
-    const generateImages = (type: string, startTop: number, startLeft: number, numImages: number, topIncrement: number, leftIncrement: number) => {
+    const generateImages = (type: string, startTop: number, startLeft: number, numImages: number, topIncrement: number, leftIncrement: number, startId: number) => {
         const images = [];
-        let idNum = 0;
-        //let currentId = idNum;
+        let idNum = startId;
 
         for (let i = 0; i < numImages; i++) {
             const style: ImageStyle = {
@@ -50,12 +49,12 @@ function App(): JSX.Element {
                 Jenga
             </header>
         <body>
-        {generateImages('horizontal', 300, 80, 3, 20, 40)}
-        {generateImages('vertical', 250, 120, 3, 20, -40)}
-        {generateImages('horizontal', 200, 80, 3, 20, 40)}
-        {generateImages('vertical', 150, 120, 3, 20, -40)}
-        {generateImages('horizontal', 100, 80, 3, 20, 40)}
-        {generateImages('vertical', 50, 120, 3, 20, -40)}
+        {generateImages('horizontal', 300, 80, 3, 20, 40, 0)}
+        {generateImages('vertical', 250, 120, 3, 20, -40, 3)}
+        {generateImages('horizontal', 200, 80, 3, 20, 40, 6)}
+        {generateImages('vertical', 150, 120, 3, 20, -40, 9)}
+        {generateImages('horizontal', 100, 80, 3, 20, 40, 12)}
+        {generateImages('vertical', 50, 120, 3, 20, -40, 15)}
             </body>
             <hr></hr>
             <EquationGenerator></EquationGenerator>
