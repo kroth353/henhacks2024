@@ -7,6 +7,7 @@ export function EquationGenerator(): JSX.Element {
     const [player2Points, setPlayer2Points] = useState<number>(0);
     const [correctAnswerSubmittted, setCorrectAnswerSubmitted] = useState<boolean>(false);
     const [displayText, setDisplayText] = useState<string>("");
+    const [blockMessage, setBlockMessage] = useState<string>("");
     const [numTries, setNumTries] = useState<number>(0);
     const [randNum1, setRandNum1] = useState<number>(getRandomNumber());
     const [randNum2, setRandNum2] = useState<number>(getRandomNumber());
@@ -36,9 +37,15 @@ export function EquationGenerator(): JSX.Element {
                  if(numTries === 0){
                     if(currentPlayer === "Player 1"){
                         setPlayer1Points(player1Points + 1);
+                        setNumTries(1);
+                        setBlockMessage(`${currentPlayer}: Remove 1 block`);
                     }else{
                         setPlayer2Points(player2Points + 1);
+                        setNumTries(1);
+                        setBlockMessage(`${currentPlayer}: Remove 1 block`);
                     }
+                 }else{
+                    setBlockMessage("");
                  }
                 setCurrentPlayer(currentPlayer === "Player 1" ? "Player 2" : "Player 1");
                 setCorrectAnswerSubmitted(true);
@@ -48,6 +55,11 @@ export function EquationGenerator(): JSX.Element {
                 setRandNum2(getRandomNumber());
                 setRandOp(getRandomOperator());
             }else{
+                if(numTries >= 1){
+                    setBlockMessage(`${currentPlayer}: Remove 2 blocks`);
+                }else{
+                    setBlockMessage(`${currentPlayer}: Remove 2 blocks`);
+                }
                 setDisplayText("Try Again!");
                 setNumTries(numTries + 1);
             }
@@ -68,6 +80,7 @@ export function EquationGenerator(): JSX.Element {
             </Form.Group>
             <br></br>
             <Button onClick={checkAnswer} disabled={correctAnswerSubmittted} style={{backgroundColor: "#afc5a1", borderBlockColor:"#afc5a1", color:'black'}}>Click to Check Answer</Button>
+            
             <div>{displayText}</div>
             <div> {"Number of Tries for "} {currentPlayer + ":"} {numTries === 0 ? " " : numTries}</div>
             <div> <span style={currentPlayer === "Player 1" ? {
@@ -76,6 +89,7 @@ export function EquationGenerator(): JSX.Element {
             <div> <span style={currentPlayer === "Player 2" ? {
                                     backgroundColor: "#afc5a1"
                                 } :{}}>Player 2 Points:</span> {player2Points}</div>
+            <div >{blockMessage}</div>
         </div>
     );
 }
